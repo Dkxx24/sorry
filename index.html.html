@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I'm Sorry</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #ffe6f0, #cce7ff);
+      color: #444;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 600px;
+      padding: 25px;
+      background: #fff0f5;
+      border-radius: 25px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      margin: 25px auto;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+      display: none;
+    }
+
+    .container.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1, h2 {
+      font-family: 'Pacifico', cursive;
+      color: #e75480;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    button {
+      padding: 12px 24px;
+      margin-top: 20px;
+      border: none;
+      background: #ff66a3;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #cc4c84;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .final-bouquet {
+      margin-top: 30px;
+    }
+
+    .final-bouquet img.single {
+      width: 200px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .bouquet-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .bouquet-gallery img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<audio id="bgmusic" autoplay loop>
+  <source src="Zehnaseeb Hasee Toh Phasee 128 Kbps.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<div class="container active" id="page1">
+  <img src="img1.jpeg" alt="Memory 1">
+  <h1>Hey...</h1>
+  <p>I know you didn’t ask for this, but I needed to speak in a way that does not interrupt.</p>
+  <button onclick="nextPage(1)">Continue</button>
+</div>
+
+<div class="container" id="page2">
+  <img src="img2.jpeg" alt="Memory 2">
+  <p>I didn’t plan to overwhelm you.</p>
+  <p>But I care. I consider.</p>
+  <p>You don’t owe me anything… but you deserve to know.</p>
+  <button onclick="nextPage(2)">Next</button>
+</div>
+
+<div class="container" id="page3">
+  <img src="img3.jpeg" alt="Memory 3">
+  <p>This isn’t to pressure you.</p>
+  <p>This is just how I express what's real to me.</p>
+  <p>If I made things heavy,Im sorry. But my care for you is light, warm, and real.</p>
+  <button onclick="nextPage(3)">Keep Going</button>
+</div>
+
+<div class="container" id="page4">
+  <img src="img4.jpeg" alt="Memory 4">
+  <p>We made something together,even if it wasnt perfect.</p>
+  <p>Like clay messy, but full of meaning.</p>
+  <button onclick="nextPage(4)">Almost there</button>
+</div>
+
+<div class="container" id="page5">
+  <h2>I KNOW I MESSED UP TALKING ALL THAT SHIT IT WAS UNNECESSARY, I DIDNT MEAN TO HURT YOU OR ANY OTHER THING YOU ARE OVERTHINKING..IM SORRY SANIKA :)</h2>
+  <p>I JUST CANT BE NONCHALANT IM SORRY ITS JUST I AM LIKE THIS, IM WORKING ON MYSELF FROM MESSED UP PAST AND YES IT WONT SHOW UP AGAIN..IM SORRY I MADE YOU CRY FEELS LIKE IM A TERRIBLE PERSON</p>
+  <a href="tel:+918928061084"><button>Call KARLE YAAR MAT KAR AISA IGNORE</button></a>
+  <div class="final-bouquet">
+    <img class="single" src="https://i.imgur.com/UtV1Y2t.png" alt="Bouquet">
+    <p style="font-style: italic; color: #d6336c;">He’s been quiet but not okay. He misses you. And he’s sorry in all the ways he couldn't say out loud.</p>
+    <div class="bouquet-gallery">
+      <img src="flo1.jpeg" alt="Flower 1">
+      <img src="flo2.jpeg" alt="Flower 2">
+      <img src="flo3.jpeg" alt="Flower 3">
+      <img src="flo4.jpeg" alt="Flower 4">
+      <img src="flo5.jpeg" alt="Flower 5">
+      <img src="flo6.jpeg" alt="Flower 6">
+    </div>
+  </div>
+</div>
+
+<script>
+  function nextPage(current) {
+    document.getElementById(`page${current}`).classList.remove("active");
+    document.getElementById(`page${current + 1}`).classList.add("active");
+  }
+
+  // Allow autoplay workaround
+  window.addEventListener('click', function () {
+    const audio = document.getElementById('bgmusic');
+    if (audio.paused) {
+      audio.play();
+    }
+  }, { once: true });
+</script>
+
+</body>
+</html>
